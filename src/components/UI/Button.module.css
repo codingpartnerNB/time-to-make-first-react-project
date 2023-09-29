@@ -1,0 +1,19 @@
+.btn{
+    font: inherit;
+    border: 1px solid cadetblue;
+    background: cadetblue;
+    color: white;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    border-radius: 7px;
+}
+  
+  .btn:hover,
+  .btn:active {
+    background: rgb(123, 184, 186);
+    border-color: rgb(123, 184, 186);
+  }
+  
+  .btn:focus {
+    outline: none;
+  }

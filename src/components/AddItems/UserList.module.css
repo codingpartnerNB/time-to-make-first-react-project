@@ -1,0 +1,18 @@
+.user-list{
+    background: darkblue;
+    box-shadow: 0 2px 8px rgba(21, 21, 21, 0.26);
+    border-radius: 10px;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 40rem;
+    list-style: none;
+    padding: 1rem;
+} 
+
+.user-list li {
+    border: 2px solid cadetblue;
+    background-color: rgb(138, 227, 229);
+    border-radius: 7px;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+}
