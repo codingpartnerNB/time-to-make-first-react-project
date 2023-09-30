@@ -21,6 +21,13 @@ const NewUser = ()=>{
             <FormInput onAddUser={addUserHandler} />
             <UserList users={userList} />
         </div>
+
+        //Similar
+
+        // [
+        //     <FormInput onAddUser={addUserHandler} />,
+        //     <UserList users={userList} />
+        // ]
     );
 }
 
