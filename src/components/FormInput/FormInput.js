@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 import styles from './FormInput.module.css';
 import Button from '../UI/Button';
 import ErrorModal from "../UI/ErrorModal";
@@ -7,9 +7,13 @@ const FormInput = (props)=>{
     const [name, setName] = useState("");
     const [age, setAge] = useState("");
     const [error, setError] = useState();
+
+    const collegeName = useRef();
+
     const addUserHandler = (event)=>{
         event.preventDefault();
-        if(name.trim().length === 0 || age.trim().length ===0){
+        const college = collegeName.current.value;
+        if(name.trim().length === 0 || age.trim().length === 0 || college.trim().length === 0){
             setError({
                 title:"Invalid input",
                 message:"Please enter a valid name and age (non-empty values)."
@@ -23,10 +27,11 @@ const FormInput = (props)=>{
             });
             return;
         }
-        const user = {id: Math.random().toString(), name:name, age:age}
+        const user = {id: Math.random().toString(), name:name, age:age, college:college}
         props.onAddUser(user);
         setName('');
         setAge('');
+        collegeName.current.value = '';
     }
     const nameChangeHandler = (event)=>{
         setName(event.target.value);
@@ -47,6 +52,8 @@ const FormInput = (props)=>{
                 <input type="text" id="username" value={name} onChange={nameChangeHandler} />
                 <label htmlFor="age">Age (In Years)</label>
                 <input type="number" id="age" value={age} onChange={ageChangeHandler} />
+                <label htmlFor="college">College Name</label>
+                <input type="text" id="college" ref={collegeName} />
                 <Button type="submit">Add User</Button>
             </form>
         </div>

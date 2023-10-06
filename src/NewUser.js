@@ -6,7 +6,8 @@ const users = [
     {
         id:'user1',
         name:"Neha",
-        age:"21"
+        age:"21",
+        college:"Sharpener"
     }
 ];
 const NewUser = ()=>{

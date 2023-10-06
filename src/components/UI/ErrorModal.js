@@ -8,17 +8,19 @@ const Backdrop = (props)=>{
 }
 
 const ModalOverlay = (props)=>{
-    <div className={styles.modal}>
-        <header className={styles.header}>
-            <h2>{props.title}</h2>
-        </header>
-        <div className={styles.content}>
-            <p>{props.message}</p>
+    return(
+        <div className={styles.modal}>
+            <header className={styles.header}>
+                <h2>{props.title}</h2>
+            </header>
+            <div className={styles.content}>
+                <p>{props.message}</p>
+            </div>
+            <footer className={styles.actions}>
+                <Button type="button" onClick={props.onConfirm}>Okay</Button>
+            </footer>
         </div>
-        <footer className={styles.actions}>
-            <Button type="button" onClick={props.onConfirm}>Okay</Button>
-        </footer>
-    </div>
+    );
 }
 
 const ErrorModal = (props)=>{
